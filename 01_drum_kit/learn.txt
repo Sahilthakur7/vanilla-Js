@@ -1,0 +1,35 @@
+Things to check out on the net after it :-
+CSS property of transition:all 0.07s; and transform:scale(1.1);
+
+transform:scale(1.1) is nothing but scaling the element to 1.1 times its size.
+
+<kbd> tag. eg - <kbd>A</kbd>  Nothing but shown in a different way.
+
+
+
+
+Things learnt :-
+
+1.Every key on the keyboard has a key code associated with it (see keycode.info). An event listener that returns a keypress (eg- keydown) has a propery called keyCode that can be fetched.
+
+2. data-key is not a standard to HTML. data attributes are manually made attributes! We have the same data-key attribute set in both the div surrounding the key as well as in the audio (That we want to play in correspondence to that key).
+
+3. How to query an element with a certain data-key?
+Ans - > document.querySelector(`audio[data-key="${e.keyCode}"]`)  . This uses ES6 to embed a JS variable inside a string
+
+4. Calling play on an audio element that is already playing does nothing! Which might not be something we need most of the times. Solution ->
+use audio.currentTime = 0; in the function. This basically will rewind it to 0;
+
+5. We can add to a classList of an element dynamically by saying element.classList.add('class');  . This can provide us with animations! We also have .remove and .toggle
+
+6. The time given to transition: decides the animation time.
+
+7.The setTimeout(function(){},time) is a function that executes the function() after time.
+
+8.There is a transition end event that occurs when the transition has ended.
+
+element.addEventListener('transitionend', removeTransition);
+
+function removeTransition(e){
+    //whatever you want to do
+}

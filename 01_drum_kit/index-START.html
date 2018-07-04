@@ -10,7 +10,7 @@
 
   <div class="keys">
     <div data-key="65" class="key">
-      <kbd>A</kbd>
+      <kbd>A</kbd> 
       <span class="sound">clap</span>
     </div>
     <div data-key="83" class="key">
@@ -58,6 +58,29 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+
+// Adding an event listener that listens to a keydown, and runs a function when that event occurs. addEventListener can be applied to any element in the DOM.
+window.addEventListener('keydown',function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return; //if no audio associated with a certain key
+    audio.currentTime = 0; //rewinds the audio
+    audio.play();
+    key.classList.add('playing');
+
+});
+
+function removeTransition(e){
+    if(e.propertyName !== 'transform') return; //We need to check for only one propery of transition (that takes the longest) . because there might be many transition properties changing together.
+    this.classList.remove('playing');
+}
+
+const keys = document.querySelectorAll('.key');
+
+keys.forEach(key => 
+        key.addEventListener('transitionend',removeTransition)
+        );
+
 
 </script>
 
