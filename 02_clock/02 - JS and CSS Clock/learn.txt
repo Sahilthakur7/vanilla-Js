@@ -1,0 +1,5 @@
+1.transform: rotate(xdeg) rotates the element by x degrees. By default it rotates the element using the centre of the object as the pivot. But, we really don't want that. So, we will use transform-origin: 100%;  By default it is set to 50%(i.e, 50% on the x-axis, i.e, the centre).
+
+2.transition-timing-function is a really cool animation provider that allows you to even create manual movements. (inspect and use in the browser to see).
+
+2.you can change the style of any element in your js function using style.property = ``;
