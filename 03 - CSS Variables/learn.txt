@@ -1,0 +1,32 @@
+1.Difference between SASS variables and CSS variables -> SASS variables get compiled and cannot be changed later, whereas the new CSS variables can be controlled using JS and be changed all over the place using a script.
+
+2. input type = "range" gives us the slider . max and min are its two attributes.
+
+3.input type = "color" does as it is named.
+
+4. We need to set our CSS variables to a certain element in the DOM, most probaly the root.
+<style>
+:root{
+    --base: #ff...;
+    ......
+}
+
+We need to prepend any variable name with -- for CSS to know it is a variable.
+
+then, to later use the variable,
+    we can do something of this sort,
+
+    img{
+padding: var(--spacing);
+    }
+
+5. there is a style called filter in CSS, it represents a graphical effect that can change the appearance of an input image. It has many further styles like blur(), brightness(), invert() etc.
+It is used like this :-
+
+filter: blur(10px);
+
+6. When we use document.querySelectorAll we don't get an array, what we get is a nodeList, the difference being arrays having a plethora of methods for them.
+
+7.dataset is an object that gets created out of the data-x attributes on html elements. we can use it as we wish, here we used data-sizing to define the suffix px.
+
+8. we use document.documentElement to select the 'root' element on the page and then use .style.setProperty to manage its styles. Observe line 65 of code properly to see how we use the name property to our advantage in using CSS variables!
